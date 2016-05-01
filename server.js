@@ -2,7 +2,7 @@ var http = require('http');
 
 var server = http.createServer(function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    res.end('<h1>Mount Olympus Airsoft Hi LIndsay</h1>');
+    res.end('<h1>Mount Olympus Airsoft Lindsay is upsessed with David</h1>');
 });
 
 var port = Number(process.env.PORT || 3000);

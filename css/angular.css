@@ -1,0 +1,7 @@
+.bit {
+    width: 20px;
+    height: 20px;
+    float: left;
+    border: 4px black solid;
+    margin: 2px;
+}

@@ -3,9 +3,11 @@
  */
 var app = angular.module('MountOlympusAirsoft', ['firebase']);
 app.controller('Main', function($scope, $firebaseObject) {
-    $scope.backgroundSize = {w:800,h:600};
-    $scope.bitIdsSource = ['a0','a1','a2','a3','b0','b1','b2','b3','c0','c1','c2','c3','d0','d1','d2','d3'];
+    $scope.bitIdsSource = ['light0','light1','light2','light3','light4','light5','light6','light7','light8','light9','light10','light11','light12','light13','light14','light15'];
     $scope.bitIds = [];
+    $scope.selectedLight = null;
+    $scope.selectedLightId = null;
+    $scope.counter = 100;
 
     var firebaseRef = new Firebase('https://blinding-heat-2342.firebaseio.com/');
     var firebaseObj = $firebaseObject(firebaseRef);
@@ -17,9 +19,8 @@ app.controller('Main', function($scope, $firebaseObject) {
     $scope.calcBitStyle = function(bitId) {
         var styles = {};
         for (var key in $scope.bitMap) {
-            if (key == bitId) {
-                styles['background-color'] = $scope.bitMap[key];
-                break;
+        if (key == bitId) {
+                styles['background-color'] = $scope.bitMap[key].color;
             }
         }
 
@@ -28,10 +29,12 @@ app.controller('Main', function($scope, $firebaseObject) {
 
 
     $scope.onClickBit = function(bitId) {
-        if ($scope.bitMap[bitId] === 'Red') {
-            $scope.bitMap[bitId] = 'Yellow';
+        $scope.selectedLight = $scope.bitMap[bitId];
+        $scope.selectedLightId = bitId;
+        if ($scope.bitMap != null && $scope.bitMap[bitId] != null && $scope.bitMap[bitId].color === 'Red') {
+            $scope.bitMap[bitId].color = 'Yellow';
         } else {
-            $scope.bitMap[bitId] = 'Red'
+            $scope.bitMap[bitId].color = 'Red'
         }
     }
 
@@ -40,9 +43,9 @@ app.controller('Main', function($scope, $firebaseObject) {
         var yellow = 0
         for (var key in $scope.bitMap) {
             if ($scope.bitMap.hasOwnProperty(key)) {
-                if ($scope.bitMap[key] === "Red") {
+                if ($scope.bitMap[key] != null && $scope.bitMap[key].color === "Red") {
                     red++;
-                } else if ($scope.bitMap[key] === "Yellow") {
+                } else if ($scope.bitMap[key] != null && $scope.bitMap[key].color === "Yellow") {
                     yellow++;
                 }
             }

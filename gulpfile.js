@@ -34,23 +34,19 @@ gulp.task('build-bower-components', function() {
         .pipe(gulp.dest('built/public/bower_components'));
 });
 
-gulp.task('build-elements', ['views','jade']);
+gulp.task('build-elements', ['jade']);
 // Uncomment the below line when you add another page,
 // rename to match the page name,
 // uncomment the associated gulp task below, and rename the same
 // gulp.task('build-elements', ['build-elements-index','build-elements-another-page']);
 
-gulp.task('views', function() {
-    gulp.src(['.views/**/*'])
-        .pipe(gulp.dest('built/views'))
-});
 
 gulp.task('jade', function() {
     gulp.src('./views/*.jade')
         .pipe(jade({
             pretty: true
         }))
-        .pipe(gulp.dest('./built/views'))
+        .pipe(gulp.dest('./built/public/'))
         ;
 });
 
@@ -62,7 +58,7 @@ gulp.task('clean', function() {
 gulp.task('build', function(cb) {
     runSequence(
         'clean',
-        ['build-server','build-css', 'build-js','build-images','build-elements'],
+        ['build-server','build-css', 'build-js','build-images','build-elements','build-bower-components'],
         cb
     );
 });

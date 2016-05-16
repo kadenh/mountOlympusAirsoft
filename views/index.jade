@@ -1,4 +1,7 @@
 extends layout
 
 block content
-  div(class="bit", ng-click="onClickBit(bitIds[0])", ng-style="calcBitStyle(bitIds[0])", ng-model="bitIds[0]")
+  div(id="winnerMessage" style="color:white;")
+    | Lights Out: {{score()['Red']}}
+  div(id="wrapper")
+    div(ng-model="bitIds.a0", ng-style="calcBitStyle('a0')", ng-click="onClickBit('a0')", class="bit")

@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(id="winnerMessage" style="color:white;")
+    | Lights Out: {{score()['Red']}}
+  div(id="wrapper")
+    div(ng-model="bitIds.a0", ng-style="calcBitStyle('a0')", ng-click="onClickBit('a0')", class="bit")

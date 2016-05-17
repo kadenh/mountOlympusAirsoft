@@ -32,7 +32,7 @@ app.controller('Main', function($scope, $firebaseObject) {
         $scope.selectedLight = $scope.bitMap[bitId];
         $scope.selectedLightId = bitId;
         if ($scope.bitMap != null && $scope.bitMap[bitId] != null && $scope.bitMap[bitId].color === 'Red') {
-            $scope.bitMap[bitId].color = 'BCF1F5';
+            $scope.bitMap[bitId].color = '#BCF1F5';
         } else {
             $scope.bitMap[bitId].color = 'Red'
         }
@@ -40,17 +40,17 @@ app.controller('Main', function($scope, $firebaseObject) {
 
     $scope.score = function() {
         var red = 0;
-        var BCF1F5 = 0
+        var #BCF1F5 = 0
         for (var key in $scope.bitMap) {
             if ($scope.bitMap.hasOwnProperty(key)) {
                 if ($scope.bitMap[key] != null && $scope.bitMap[key].color === "Red") {
                     red++;
-                } else if ($scope.bitMap[key] != null && $scope.bitMap[key].color === "BCF1F5") {
-                    BCF1F5++;
+                } else if ($scope.bitMap[key] != null && $scope.bitMap[key].color === "#BCF1F5") {
+                    #BCF1F5++;
                 }
             }
         }
-        return {"Red": red, "BCF1F5": BCF1F5};
+        return {"Red": red, "#BCF1F5": #BCF1F5};
     }
 
 });

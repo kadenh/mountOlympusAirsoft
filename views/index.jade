@@ -19,3 +19,11 @@ block content
   div(ng-model="bitIds.light13", ng-style="calcBitStyle('light13')", ng-click="onClickBit('light13')", class="bit", id="light13")
   div(ng-model="bitIds.light14", ng-style="calcBitStyle('light14')", ng-click="onClickBit('light14')", class="bit", id="light14")
   div(ng-model="bitIds.light15", ng-style="calcBitStyle('light15')", ng-click="onClickBit('light15')", class="bit", id="light15")
+  div
+    button(class="btn btn-default", ng-click="uncheckable = !uncheckable") Up
+  div
+    button(class="btn btn-default", ng-click="uncheckable = !uncheckable") Down
+  div
+    button(class="btn btn-default", ng-click="uncheckable = !uncheckable") Left
+  div
+    button(class="btn btn-default", ng-click="uncheckable = !uncheckable") Right

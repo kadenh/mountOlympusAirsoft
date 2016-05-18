@@ -1,7 +1,7 @@
 /**
  * Created by davidtmeadsjr on 5/15/16.
  */
-var app = angular.module('MountOlympusAirsoft', ['firebase']);
+var app = angular.module('MountOlympusAirsoft', ['firebase','ui.bootstrap','ngRoute'] );
 app.controller('Main', function($scope, $firebaseObject) {
     $scope.bitIdsSource = ['light0','light1','light2','light3','light4','light5','light6','light7','light8','light9','light10','light11','light12','light13','light14','light15'];
     $scope.bitIds = [];

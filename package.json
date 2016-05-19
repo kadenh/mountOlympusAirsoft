@@ -20,15 +20,16 @@
     "debug": "~2.2.0",
     "del": "^2.2.0",
     "express": "~4.13.1",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
     "gulp-ngdocs": "^0.2.13",
+    "gulp-real-favicon": "^0.2.1",
     "morgan": "~1.6.1",
     "node-env-file": "^0.1.8",
     "node-inspector": "^0.12.8",
     "request": "^2.72.0",
     "run-sequence": "^1.1.5",
     "serve-favicon": "~2.3.0",
-    "superagent": "^1.8.3",
-    "gulp": "^3.9.1",
-    "gulp-jade": "^1.1.0"
+    "superagent": "^1.8.3"
   }
 }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="MountOlympusAirsoft">
+<head>
+    <title>Mt. Olympus Airsoft</title>
+    <link rel="stylesheet" href="/css/angular.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="//cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+    <script src="//cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+</head>
+<body ng-controller="Main">
+    <div my-background-image="../images/complex.png">
+        <div id="winnerMessage" style="color:white;">Lights Out: {{score()['Red']}}</div>
+        <div ng-model="bitIds.light0" ng-style="calcBitStyle('light0')" ng-click="onClickBit('light0')" id="light0" class="bit"></div>
+        <div ng-model="bitIds.light1" ng-style="calcBitStyle('light1')" ng-click="onClickBit('light1')" id="light1" class="bit"></div>
+        <div ng-model="bitIds.light2" ng-style="calcBitStyle('light2')" ng-click="onClickBit('light2')" id="light2" class="bit"></div>
+        <div ng-model="bitIds.light3" ng-style="calcBitStyle('light3')" ng-click="onClickBit('light3')" id="light3" class="bit"></div>
+        <div ng-model="bitIds.light4" ng-style="calcBitStyle('light4')" ng-click="onClickBit('light4')" id="light4" class="bit"></div>
+        <div ng-model="bitIds.light5" ng-style="calcBitStyle('light5')" ng-click="onClickBit('light5')" id="light5" class="bit"></div>
+        <div ng-model="bitIds.light6" ng-style="calcBitStyle('light6')" ng-click="onClickBit('light6')" id="light6" class="bit"></div>
+        <div ng-model="bitIds.light7" ng-style="calcBitStyle('light7')" ng-click="onClickBit('light7')" id="light7" class="bit"></div>
+        <div ng-model="bitIds.light8" ng-style="calcBitStyle('light8')" ng-click="onClickBit('light8')" id="light8" class="bit"></div>
+        <div ng-model="bitIds.light9" ng-style="calcBitStyle('light9')" ng-click="onClickBit('light9')" id="light9" class="bit"></div>
+        <div ng-model="bitIds.light10" ng-style="calcBitStyle('light10')" ng-click="onClickBit('light10')" id="light10" class="bit"></div>
+        <div ng-model="bitIds.light11" ng-style="calcBitStyle('light11')" ng-click="onClickBit('light11')" id="light11" class="bit"></div>
+        <div ng-model="bitIds.light12" ng-style="calcBitStyle('light12')" ng-click="onClickBit('light12')" id="light12" class="bit"></div>
+        <div ng-model="bitIds.light13" ng-style="calcBitStyle('light13')" ng-click="onClickBit('light13')" id="light13" class="bit"></div>
+        <div ng-model="bitIds.light14" ng-style="calcBitStyle('light14')" ng-click="onClickBit('light14')" id="light14" class="bit"></div>
+        <div ng-model="bitIds.light15" ng-style="calcBitStyle('light15')" ng-click="onClickBit('light15')" id="light15" class="bit"></div>
+        <div><button ng-click="changeTopValue(-1)" id="Up" ng-mousedown="mouseDown()" ng-mouseup="mouseUp()" class="btn btn-default">Up</button></div>
+        <div><button ng-click="changeTopValue(1)" id="Down" class="btn btn-default">Down</button></div>
+        <div><button ng-click="changeLeftValue(-1)" id="Left" class="btn btn-default">Left</button></div>
+        <div><button ng-click="changeLeftValue(1)" id="Right" class="btn btn-default">Right</button></div>
+    </div>
+</body>
+</html>

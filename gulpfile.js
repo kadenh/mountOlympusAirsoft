@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var jade = require('gulp-jade');
+var ejs = require('gulp-ejs');
 var runSequence = require('run-sequence');
 var del = require('del');
 var browserSync = require('browser-sync').create();
@@ -36,16 +36,16 @@ gulp.task('build-bower-components', function() {
         .pipe(gulp.dest('built/public/bower_components'));
 });
 
-gulp.task('build-elements', ['jade']);
+gulp.task('build-elements', ['ejs']);
 // Uncomment the below line when you add another page,
 // rename to match the page name,
 // uncomment the associated gulp task below, and rename the same
 // gulp.task('build-elements', ['build-elements-index','build-elements-another-page']);
 
 
-gulp.task('jade', function() {
-    gulp.src('./views/*.jade')
-        .pipe(jade({
+gulp.task('ejs', function() {
+    gulp.src('./views/*.ejs')
+        .pipe(ejs({
             pretty: true
         }))
         .pipe(gulp.dest('./built/public/'))

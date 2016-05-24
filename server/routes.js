@@ -16,9 +16,9 @@ router.get('/index2.html',
         res.render('index2', {
         });
     });
-router.get('/position.html',
+router.get('/time.html',
     function(req, res, next) {
-        res.render('position', {
+        res.render('time', {
         });
     });
 

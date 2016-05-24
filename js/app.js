@@ -1,7 +1,7 @@
 /**
  * Created by davidtmeadsjr on 5/15/16.
  */
-var app = angular.module('MountOlympusAirsoft', ['firebase','ui.bootstrap','ngRoute'] ).
+var app = angular.module('MountOlympusAirsoft', ['firebase','ui.bootstrap','ngRoute','ngResource', 'ngAnimate'] ).
 directive('myBackgroundImage', function () {
     return function (scope, element, attrs) {
         element.css({
@@ -14,20 +14,27 @@ directive('myBackgroundImage', function () {
         });
     };
 });
-app.directive('time', function ($interval) {
+app.directive('position', function ($interval) {
     return {
-        templateUrl: 'time.html',
+        templateUrl: 'position.html',
         restrict: 'E',
         scope: {
-            Time: '=value'
+            selectedLight: '=value'
         },
         link: function (scope, element, attrs) {
-            element.addClass('time');
+            element.addClass('position');
 
             var promise;
-            scope.mouseDown = function() {
+            scope.mouseDown = function(dir) {
                 promise = $interval(function () {
-                    scope.Time = scope.Time + 1;
+                    if (dir === "up")
+                        scope.selectedLight.top = scope.selectedLight.top + 1;
+                    else if (dir === "down")
+                        scope.selectedLight.top = scope.selectedLight.top - 1;
+                    else if (dir === "left")
+                        scope.selectedLight.left = scope.selectedLight.left - 1;
+                    else if (dir === "right")
+                        scope.selectedLight.left = scope.selectedLight.left + 1;
                 }, 100);
 
             };

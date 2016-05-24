@@ -2,9 +2,9 @@
 var app = angular.module('plunkr', ['ngResource', 'ui.router', 'ui.bootstrap', 'ngAnimate']);
 
 app.controller('MainCtrl', function($scope) {
-    $scope.Time = 150;
+    $scope.position = 150;
+    $scope.altTime = 125;
 });
-
 
 
 app.directive('time', function ($interval) {
@@ -12,7 +12,7 @@ app.directive('time', function ($interval) {
         templateUrl: 'time.html',
         restrict: 'E',
         scope: {
-            Time: '=value'
+            position: '=value'
         },
         link: function (scope, element, attrs) {
             element.addClass('time');
@@ -21,9 +21,9 @@ app.directive('time', function ($interval) {
             scope.mouseDown = function(dir) {
                 promise = $interval(function () {
                     if (dir === "up")
-                        scope.Time = scope.Time + 1;
+                        scope.position = scope.position + 1;
                     else
-                        scope.Time = scope.Time - 1;
+                        scope.position = scope.position - 1;
                 }, 100);
 
             };

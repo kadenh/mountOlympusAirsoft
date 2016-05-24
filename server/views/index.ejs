@@ -3,13 +3,18 @@
 <head>
     <title>Mt. Olympus Airsoft</title>
     <link rel="stylesheet" href="/css/angular.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <!--<script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>-->
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="/js/app.js"></script>
     <script src="//cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
     <script src="//cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script data-require="jquery@*" data-semver="2.1.1" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body ng-controller="Main">
     <div my-background-image="../images/complex.png">
@@ -30,10 +35,7 @@
         <div ng-model="bitIds.light13" ng-style="calcBitStyle('light13')" ng-click="onClickBit('light13')" id="light13" class="bit"></div>
         <div ng-model="bitIds.light14" ng-style="calcBitStyle('light14')" ng-click="onClickBit('light14')" id="light14" class="bit"></div>
         <div ng-model="bitIds.light15" ng-style="calcBitStyle('light15')" ng-click="onClickBit('light15')" id="light15" class="bit"></div>
-        <div><button ng-click="changeTopValue(-1)" id="Up" ng-mousedown="mouseDown()" ng-mouseup="mouseUp()" class="btn btn-default">Up</button></div>
-        <div><button ng-click="changeTopValue(1)" id="Down" class="btn btn-default">Down</button></div>
-        <div><button ng-click="changeLeftValue(-1)" id="Left" class="btn btn-default">Left</button></div>
-        <div><button ng-click="changeLeftValue(1)" id="Right" class="btn btn-default">Right</button></div>
+        <position value="position"></position>
     </div>
 </body>
 </html>

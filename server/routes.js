@@ -22,5 +22,11 @@ router.get('/time.html',
         });
     });
 
+router.get('/position.html',
+    function(req, res, next) {
+        res.render('position', {
+        });
+    });
+
 
 module.exports = router;

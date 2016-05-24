@@ -31,7 +31,6 @@
     "node-inspector": "^0.12.8",
     "request": "^2.72.0",
     "run-sequence": "^1.1.5",
-    "serve-favicon": "~2.3.0",
     "superagent": "^1.8.3"
   }
 }

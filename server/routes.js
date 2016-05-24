@@ -2,14 +2,23 @@
  * Created by davidtmeadsjr on 5/15/16.
  */
 var express = require('express');
-var request = require('superagent');
 var router = express.Router();
-var async = require('async');
 
 
 router.get('/',
     function(req, res, next) {
         res.render('index', {
+        });
+    });
+
+router.get('/index2.html',
+    function(req, res, next) {
+        res.render('index2', {
+        });
+    });
+router.get('/position.html',
+    function(req, res, next) {
+        res.render('position', {
         });
     });
 

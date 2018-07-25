@@ -45,7 +45,7 @@ app.controller('Main', function($scope, $firebaseObject) {
     $scope.selectedLightId = null;
     $scope.counter = 100;
 
-    var firebaseRef = new Firebase('https://blinding-heat-2342.firebaseio.com/');
+    var firebaseRef = new Firebase('https://airsoft-a66af.firebaseio.com/');
     var firebaseObj = $firebaseObject(firebaseRef);
     firebaseObj.$bindTo($scope, "bitMap").then(function(){
         //This puts the list of square bitIds in the right variable for the ng-repeat, but not until after the data is retrieved
